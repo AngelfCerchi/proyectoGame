@@ -6,7 +6,7 @@ object bubba {
 	var property position = game.origin()
 	var property image = "mandy.png"	
 	var property energia = 30
-	var property salud = 10
+	var property salud =  10
 	var property dinero = 0
 	var property municiones = 0
 	var property direccion = izquierda
@@ -21,13 +21,14 @@ object bubba {
 		
 		const todosLosConsumibles = [consumiblesArriba,consumiblesderecha,consumiblesAbajo,consumiblesizquierda].flatten()
 		todosLosConsumibles.forEach{ consumible =>
-			energia = energia+consumible.aporta()
-			consumible.serConsumido()
-			game.say(self,"Delicioso")
+			consumible.serConsumido(self)
+			game.say(self,"Up!")
 		}
 	}
 	
 	// EMPUJAR ELEMENTOS -CAJAS
+	
+	// OBS
 	method empujar(elemento){
 		try{
 			elemento.movete(self.direccion())

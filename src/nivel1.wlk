@@ -11,13 +11,14 @@ object nivelBloques {
 
 	method configurate() {
 		// fondo - es importante que sea el primer visual que se agregue
-		game.addVisual(new Fondo())
-			
+		game.addVisual(new Fondo(image= "baldosa.jpg"))
+		const hamburgesa = new Energia(position=game.at(3,2),image = 'hamburger.png',aporta = 10)
+		const botiquin = new Salud(position=game.at(5,2),image = 'botiquin.png',aporta = 5)
 		// otros visuals, p.ej. bloques o llaves
 		game.addVisual(new Bloque(position=game.at(3,5)))
 		game.addVisual(new Bloque(position=game.at(3,3)))
-		game.addVisual(new Botiquin(position=game.at(3,2)))
-		game.addVisual(new Hamburguesa(position=game.at(5,2)))
+		game.addVisual(hamburgesa)
+		game.addVisual(botiquin)
 		game.addVisual(salud)
 		game.addVisual(energia)
 		game.addVisual(dinero)
@@ -25,7 +26,7 @@ object nivelBloques {
 		game.addVisual(bubba)
 		
 		//DEPOSITO
-		var depositos = [new Deposito(),new Deposito()]
+
 		// teclado
 		// este es para probar, no es necesario dejarlo
 		keyboard.t().onPressDo({ self.terminar() })
