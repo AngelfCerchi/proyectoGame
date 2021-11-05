@@ -10,7 +10,7 @@ object bubba {
 	var property dinero = 0
 	var property municiones = 0
 	var property direccion = izquierda
-	
+	method puedeRecibirDanio() = true
 	
 	// BUBBA COME	
 	method comer(){
@@ -33,7 +33,8 @@ object bubba {
 		try{
 			elemento.movete(self.direccion())
 		}catch e{
-			energia += elemento.afectar(self)
+			elemento.afectar(self)
+			game.say(self,"Esta Atascada")
 		}
 	}
 	method objectoEnCeldaA(dir){

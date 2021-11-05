@@ -4,9 +4,9 @@ import personajes.*
 import elementos.*
 import nivel2.*
 import marcador.*
-import consumibles.*
 import direcciones.*
 import deposito.*
+import consumibles.*
 object nivelBloques {
 
 	method configurate() {
@@ -15,8 +15,8 @@ object nivelBloques {
 		const hamburgesa = new Energia(position=game.at(3,2),image = 'hamburger.png',aporta = 10)
 		const botiquin = new Salud(position=game.at(5,2),image = 'botiquin.png',aporta = 5)
 		// otros visuals, p.ej. bloques o llaves
-		game.addVisual(new Bloque(position=game.at(3,5)))
-		game.addVisual(new Bloque(position=game.at(3,3)))
+		game.addVisual(new Cajas(image = "caja.png", position=game.at(3,5)))
+		game.addVisual(new Cajas(image = "caja.png",position=game.at(3,3)))
 		game.addVisual(hamburgesa)
 		game.addVisual(botiquin)
 		game.addVisual(salud)

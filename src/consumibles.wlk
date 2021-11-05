@@ -1,11 +1,16 @@
 import wollok.game.*
-class Consumibles{
-	var property position
-	var property image
+import elementos.*
+
+class Consumibles inherits Elementos{
 	var property aporta 
-	method puedeConsumirse() = true
+	override method puedePisarse() = false
+	override method puedeConsumirse() = true
+	override method puedeRecibirDanio() = false
+	override method movete(dir) {}
+	
+	//Abstract
 	method serConsumido(player)
-	method movete(dir) {}
+	
 	
 }
 class Energia inherits Consumibles{

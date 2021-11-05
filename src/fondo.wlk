@@ -5,6 +5,7 @@ class Fondo {
 	var property image
 	method puedePisarse() = true
 	method puedeConsumirse() = false
+	method puedeRecibirDanio() = false
 	method movete(dir) {}
 
 }
