@@ -14,10 +14,10 @@ object bubba {
 	
 	// BUBBA COME	
 	method comer(){
-		const consumiblesArriba = self.objectoEnCeldaA(arriba).filter{ obj => obj.puedeComerse()}
-		const consumiblesAbajo = self.objectoEnCeldaA(abajo).filter{ obj => obj.puedeComerse()}
-		const consumiblesderecha = self.objectoEnCeldaA(derecha).filter{ obj => obj.puedeComerse()}
-		const consumiblesizquierda = self.objectoEnCeldaA(izquierda).filter{ obj => obj.puedeComerse()}
+		const consumiblesArriba = self.objectoEnCeldaA(arriba).filter{ obj => obj.puedeConsumirse()}
+		const consumiblesAbajo = self.objectoEnCeldaA(abajo).filter{ obj => obj.puedeConsumirse()}
+		const consumiblesderecha = self.objectoEnCeldaA(derecha).filter{ obj => obj.puedeConsumirse()}
+		const consumiblesizquierda = self.objectoEnCeldaA(izquierda).filter{ obj => obj.puedeConsumirse()}
 		
 		const todosLosConsumibles = [consumiblesArriba,consumiblesderecha,consumiblesAbajo,consumiblesizquierda].flatten()
 		todosLosConsumibles.forEach{ consumible =>

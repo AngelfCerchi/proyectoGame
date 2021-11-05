@@ -5,7 +5,7 @@ class Bloque {
 	const property llegadas
 	const property image = "caja.png" 	
 	method puedePisarse() = false
-	method puedeComerse() = false
+	method puedeConsumirse() = false
 	
 	
 	method movete(direccion){
@@ -20,8 +20,8 @@ class Bloque {
 			throw new Exception(message = "No puedo moverme!")
 		}
 	}
-	method afectar(bubba){
-		bubba.retroceder()
+	method afectar(player){
+		player.retroceder()
 		return 1
 	}
 	method estaEnDeposito(){

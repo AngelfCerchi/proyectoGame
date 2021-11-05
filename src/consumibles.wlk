@@ -3,7 +3,7 @@ class Consumibles{
 	var property position
 	var property image
 	var property aporta 
-	method puedeComerse() = true
+	method puedeConsumirse() = true
 	method serConsumido(player)
 	method movete(dir) {}
 	
