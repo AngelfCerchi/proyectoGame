@@ -30,7 +30,7 @@ class Municion inherits Consumibles{
 	override method serConsumido(player){
 		game.removeVisual(self)
 		const nuevaMunicion = player.municiones() + aporta
-		player.salud(nuevaMunicion)
+		player.municiones(nuevaMunicion)
 	}
 }
 
@@ -38,6 +38,6 @@ class Dinero inherits Consumibles{
 	override method serConsumido(player){
 		game.removeVisual(self)
 		const nuevoDinero = player.dinero() + aporta
-		player.salud(nuevoDinero)		
+		player.dinero(nuevoDinero)		
 	}
 }
