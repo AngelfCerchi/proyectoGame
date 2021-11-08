@@ -4,13 +4,15 @@ import nivel1.*
 
 object bubba {
 	var property position = game.origin()
-	var property image = "mandy.png"	
+	var property image = "among1.png"	
 	var property energia = 30
 	var property salud =  10
 	var property dinero = 0
-	var property municiones = 0
+	var property municiones = 50
 	var property direccion = izquierda
 	method puedeRecibirDanio() = true
+	//method esPlayer() = true
+
 	
 	// BUBBA COME	
 	method comer(){
@@ -27,14 +29,13 @@ object bubba {
 	}
 	
 	// EMPUJAR ELEMENTOS -CAJAS
-	
 	// OBS
-	method empujar(elemento){
+	method mover(elemento){
 		try{
-			elemento.movete(self.direccion())
+			elemento.moverse(self.direccion())
 		}catch e{
 			elemento.afectar(self)
-			game.say(self,"Esta Atascada")
+			game.say(self,"Caja Atascada")
 		}
 	}
 	method objectoEnCeldaA(dir){

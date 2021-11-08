@@ -2,22 +2,21 @@ import wollok.game.*
 import direcciones.*
 class Elementos{
 	var property position
-	const property image 
+	var property image 
 	
 	//Abstact
 	method puedePisarse()
 	method puedeConsumirse()
 	method puedeRecibirDanio()
-	method movete(direccion)
+	method moverse(direccion)
 	
 }
 class Cajas inherits Elementos {
-	const property llegadas
 	override method puedePisarse() = false
 	override method puedeConsumirse() = false
 	override method puedeRecibirDanio() = false
 	
-	override method movete(direccion){
+	override method moverse(direccion){
 		self.validarLugar(direccion)
 		position = direccion.moverSiguiente(self.position(),self)
 	}
@@ -33,9 +32,7 @@ class Cajas inherits Elementos {
 		player.retroceder()
 		player.energia(player.energia()+1)
 	}
-	method estaEnDeposito(){
-		return llegadas.map{ llegada => llegada.position()}.contains(self.position())
-	}
+
 }
 
 

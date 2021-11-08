@@ -1,12 +1,12 @@
 import wollok.game.*
 import elementos.*
-
+import direcciones.*
 class Consumibles inherits Elementos{
 	var property aporta 
 	override method puedePisarse() = false
 	override method puedeConsumirse() = true
 	override method puedeRecibirDanio() = false
-	override method movete(dir) {}
+	override method moverse(dir) {}
 	
 	//Abstract
 	method serConsumido(player)
@@ -30,15 +30,20 @@ class Salud inherits Consumibles{
 }
 
 class Municion inherits Consumibles{
+	override method aporta() = 1
 	override method serConsumido(player){
 		game.removeVisual(self)
 		player.municiones(player.municiones() + aporta)
 	}
+	method avanzar(direccion){
+		position = direccion.moverSiguiente(position,self)
+	}
 }
-
-class Dinero inherits Consumibles{
+class Dinero inherits Consumibles{ 
+	override method puedePisarse() = true
 	override method serConsumido(player){
 		game.removeVisual(self)
-		player.dinero(player.dinero() + aporta)		
+		player.dinero(player.dinero() + aporta)	
+		game.say(player,aporta.toString() + '! :D')	
 	}
 }

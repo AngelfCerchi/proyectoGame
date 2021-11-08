@@ -10,4 +10,12 @@ class Fondo {
 
 }
 
+class FondoMarcador{
+	var property position 
+	var property image
+	method puedePisarse() = true
+	method puedeConsumirse() = false
+	method puedeRecibirDanio() = false
+	method movete(dir) {}
+}
 
